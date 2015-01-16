@@ -1,0 +1,4 @@
+.idea
+target
+.resources
+src/main/java/com/masa/common/config/googleplus/Constants.java

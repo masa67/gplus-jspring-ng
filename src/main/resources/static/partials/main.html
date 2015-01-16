@@ -1,0 +1,46 @@
+<div id="wrapper">
+	<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">
+					<div>G+ Sign-In Demo</div>
+				</a>
+			</div>
+			<div class="navbar-collapse collapse"></div>
+		</div>
+	</div>
+	<div class="container">
+		<h2>Google+ Sign-In Demo for Java Spring and Angular</h2>
+		<div>Test the sign in by pressing the button.</div>
+		<div class="on-top-of-button">Your Google data is not stored in the service.</div>
+		<div ng-if="user===undefined" id="gConnect">
+			<button id="gSignin"
+			  class="g-signin"
+			  data-scope="profile email"
+				data-clientId="{{clientId}}"
+				data-redirecturi="postmessage"
+				data-accesstype="offline"
+				data-cookiepolicy="single_host_origin"
+				data-callback="onSignInCallback"
+				data-theme="dark"></button>
+		</div>
+		<div ng-if="user===undefined">Some text to demonstrate the FOUC with rendering the G+ button: the text drops a couple of pixels after the button has been rendered.</div>
+		<div ng-if="user!==undefined">
+			<div ng-if="user.nickname!==undefined">Nickname:
+				{{user.nickname}}</div>
+			<div ng-if="user.nickname===undefined">
+       <label>Nickname: </label> <input ng-model="models.nickname" type="text">
+      </div>
+			<div>User: {{user.googlePerson.displayName}}</div>
+			<div>E-mail: {{user.googlePerson.email}}</div>
+      <button ng-if="user.nickname===undefined" class="btn btn-primary login" ng-click="clickUpdateNickname()">Log in</button>
+			<button class="btn btn-primary signout" ng-click="clickSignOut()">Sign out</button>
+		</div>
+	</div>
+</div>
