@@ -2,3 +2,6 @@
 target
 .resources
 src/main/java/com/masa/common/config/googleplus/Constants.java
+src/main/resources/application.properties
+keystore.jks
+
