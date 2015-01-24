@@ -21,6 +21,7 @@ Build with Maven.
 
 # Version History
 
+ * 2.1: Remove application.properties so that it needs to be recreated based on template.
  * 2.0: SSL property handling added.
  * 1.0: The initial version.
  
